@@ -20,14 +20,18 @@ cd -      #go to the last visited file
 cd / cd ~ #go to the home file of the current users
 
 ```
+setenv && unsetenv :
 
-## Contributing
+setenv :
 
-Pull requests are welcome. For major changes, please open an issue first
-to discuss what you would like to change.
+```bash
+setenv hello World #Create the value hello in the environment and assign the value world
 
-Please make sure to update tests as appropriate.
+setenv hello #Create value without attributed value
 
-## License
+setenv USERNAME helloWorld #Change the value of USERNAME to helloWorld
 
-[MIT](https://choosealicense.com/licenses/mit/)
+setenv USERNAME #removes the value assigned to USERNAME
+
+```
+
