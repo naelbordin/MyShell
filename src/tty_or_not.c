@@ -4,7 +4,7 @@
 ** File description:
 ** make a star
 */
-#include "a.h"
+#include "../include/a.h"
 #include <errno.h>
 
 struct point *when_is_not_a_ttybis(struct point *st, char **env, __pid_t pid)

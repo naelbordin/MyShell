@@ -4,7 +4,7 @@
 ** File description:
 ** make a star
 */
-#include "a.h"
+#include "../../include/a.h"
 
 
 char **set_enva(char **env, char *env_change)

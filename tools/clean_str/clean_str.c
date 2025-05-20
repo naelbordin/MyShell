@@ -4,7 +4,7 @@
 ** File description:
 ** mini shell
 */
-#include "a.h"
+#include "../../include/a.h"
 
 int whas_last_letter(char *c, int i)
 {

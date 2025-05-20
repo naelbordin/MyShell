@@ -4,7 +4,7 @@
 ** File description:
 ** mini shell
 */
-#include "a.h"
+#include "../../include/a.h"
 
 int while_tab_or_space(char *c, int i)
 {

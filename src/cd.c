@@ -4,7 +4,7 @@
 ** File description:
 ** make a star
 */
-#include "a.h"
+#include "../include/a.h"
 
 char **cd1(char **cmd, char **new_env, char **env)
 {

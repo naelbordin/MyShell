@@ -4,7 +4,7 @@
 ** File description:
 ** make a star
 */
-#include "a.h"
+#include "../include/a.h"
 
 char *env_search(char **env, char *search)
 {

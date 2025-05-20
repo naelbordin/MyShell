@@ -13,7 +13,7 @@
 #include <fcntl.h>
 #include <sys/stat.h>
 #include <string.h>
-#include "a.h"
+#include "../include/a.h"
 #include <errno.h>
 #include <signal.h>
 

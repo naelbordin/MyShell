@@ -4,7 +4,7 @@
 ** File description:
 ** make a star
 */
-#include "a.h"
+#include "../../include/a.h"
 struct point set(struct point *st)
 {
     st->bufsize = 0;

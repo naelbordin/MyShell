@@ -6,11 +6,11 @@
 ##
 
 NAME = mysh
-fichier = $(wildcard *.c)
+fichier = $(wildcard ./tools/*.c ./tools/clean_str/*.c ./tools/env_changer/*.c ./tools/my_virg_to_word_array/*.c src/*.c)
 
 all: $(NAME)
 
-mysh: ## Création de la lib
+mysh: ## Execute le programme
 	gcc $(fichier) -g3 -o mysh
 	chmod 755 mysh
 
@@ -19,10 +19,7 @@ clean: ## Clean général
 	rm -f *~
 	rm -f *#
 
-fclean:    clean ## Supprime l'executable
+fclean:    clean
 	rm -f $(NAME)
 
-re:    fclean all ## Rebuild
-
-## -- Other --
-help: ## List of commands
+re:    fclean all
