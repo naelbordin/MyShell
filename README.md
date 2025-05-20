@@ -35,3 +35,14 @@ setenv USERNAME #removes the value assigned to USERNAME
 
 ```
 
+Unsetenv :
+
+```bash
+unsetenv hello World #remove the value hello from the env
+
+```
+
+
+
+
+
