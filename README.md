@@ -8,6 +8,8 @@ Use Makefile for compile the project
 
 ```bash
 make re
+
+./mysh
 ```
 
 ## Commands & flags
@@ -42,9 +44,22 @@ unsetenv hello World #remove the value hello from the env
 
 ```
 
-## other commands
+Exit :
 
-We can also use any commands currently installed on your computer.
+```bash
+Exit #exit the program
+
+```
+
+## Other commands
+
+We can also use any commands currently installed on your computer and we can run the program within the program.
+
+```bash
+./mysh
+
+nael@nael:~/for_github/a/MyShell$ ./mysh #enter in program
+```
 
 
 
