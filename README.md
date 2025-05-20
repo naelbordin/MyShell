@@ -7,22 +7,18 @@ Create a shell, a first-year project at Epitech that involves implementing basic
 Use Makefile for compile the project
 
 ```bash
-Make re
+make re
 ```
 
-## Usage
+## Commands & flags
 
-```python
-import foobar
+cd :
 
-# returns 'words'
-foobar.pluralize('word')
+```bash
+cd ../    #go to current file path
+cd -      #go to the last visited file
+cd / cd ~ #go to the home file of the current users
 
-# returns 'geese'
-foobar.pluralize('goose')
-
-# returns 'phenomenon'
-foobar.singularize('phenomena')
 ```
 
 ## Contributing
