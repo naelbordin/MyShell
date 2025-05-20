@@ -42,6 +42,11 @@ unsetenv hello World #remove the value hello from the env
 
 ```
 
+## other commands
+
+We can also use any commands currently installed on your computer.
+
+
 
 
 
