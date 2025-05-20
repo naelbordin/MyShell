@@ -1,13 +1,13 @@
-# Foobar
+# MyShell
 
-Foobar is a Python library for dealing with word pluralization.
+Create a shell, a first-year project at Epitech that involves implementing basic commands.
 
-## Installation
+## How to start the project
 
-Use the package manager [pip](https://pip.pypa.io/en/stable/) to install foobar.
+Use Makefile for compile the project
 
 ```bash
-pip install foobar
+Make re
 ```
 
 ## Usage
