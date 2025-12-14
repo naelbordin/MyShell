@@ -35,8 +35,10 @@ char *clean_space_bandaf(char *c)
 {
     int i = 0;
     int a = 0;
-    char *res = malloc(sizeof(char) * cpt_torm(c));
+    char *res = malloc(sizeof(char) * (cpt_torm(c) + 1));
 
+    if (res == NULL)
+        return c;
     while (c[i] == ' ' || c[i] == '\t')
         i++;
     while (c[i] != '\0') {
@@ -46,6 +48,7 @@ char *clean_space_bandaf(char *c)
         }
         i++;
     }
+    res[a] = '\0';
     return res;
 }
 

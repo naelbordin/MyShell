@@ -65,14 +65,16 @@ char **cd3(char **new_env, char **env)
     char *cwd2;
     char *cwd;
     int verif;
-    char *cpt[] = {"DOG", "OLDPWD", cwd};
-    char **cpt2 = malloc((3 + 1) * sizeof(char *));
 
-    cwd = getcwd(NULL, 0);
+    cwd = getcwd(NULL, 0);  // INITIALIZE BEFORE USE
+    char *cpt[] = {"DOG", "OLDPWD", cwd};  // Now cwd is valid
     new_env = get_env(env);
+    char **cpt2 = malloc((3 + 1) * sizeof(char *));
     verif = chdir(env_search(env, "HOME="));
     verif_fich_error(env_search(env, "HOME="), verif);
     cwd2 = getcwd(NULL, 0);
+    free(cwd);  // CLEANUP
+    free(cwd2); // CLEANUP
     return new_env;
 }
 

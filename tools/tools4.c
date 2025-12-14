@@ -11,11 +11,14 @@ char *env_search(char **env, char *search)
     int c = occ_env(env, search);
     int len_debut = my_strlen(search);
     int len_fin = my_strlen(env[c]);
-    char *res = (char *)malloc(sizeof(char) * (len_fin - len_debut));
+    char *res = (char *)malloc(sizeof(char) * (len_fin - len_debut + 1));  // +1 for null!
 
-    for (int i = len_debut; i != len_fin; i++) {
+    if (res == NULL)
+        return NULL;
+    for (int i = len_debut; i < len_fin; i++) {
         res[i - len_debut] = env[c][i];
     }
+    res[len_fin - len_debut] = '\0';  // NULL TERMINATOR!
     return res;
 }
 

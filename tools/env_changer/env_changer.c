@@ -49,11 +49,16 @@ char **set_envd(char **env, char *env_change, char *env_change2)
 
 char **set_envnew(char **env, char *env_change)
 {
-    char **new_env = malloc(sizeof(char *) * tab_len(env) *
-    my_strlen(env_change));
+    int env_len = tab_len(env);
+    char **new_env = malloc(sizeof(char *) * (env_len + 2));
     int n = 0;
+    char *tmp1, *tmp2;
 
-    env_change = my_strcat(my_strcat(env_change, "="), "\0");
+    if (new_env == NULL)
+        return env;
+    tmp1 = my_strcat(env_change, "=");
+    tmp2 = my_strcat(tmp1, "\0");
+    env_change = tmp2;
     for (int i = 0; env[i] != NULL; i++) {
         if (env[i + 1] != NULL) {
             new_env[n] = env[i];
@@ -64,6 +69,7 @@ char **set_envnew(char **env, char *env_change)
         n++;
     }
     new_env[n + 1] = NULL;
+    free(tmp1);
     return new_env;
 }
 

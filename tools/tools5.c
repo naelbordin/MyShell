@@ -8,13 +8,20 @@
 
 char *strcatv(char *c, char *b)
 {
-    int i = my_strlen(c);
-    char *v = (char *)malloc(sizeof(char) * (my_strlen(b) - i + 1));
+    int c_len = my_strlen(c);
+    int b_len = my_strlen(b);
+    char *v = (char *)malloc(sizeof(char) * (b_len - c_len + 2));
+    int i = c_len;
 
-    while (i != my_strlen(b)) {
-        v[i - my_strlen(c)] = b[i];
+    if (v == NULL)
+        return NULL;
+    if (b_len < c_len)  // BOUNDS CHECK - prevents negative allocation
+        return NULL;
+    while (i < b_len) {
+        v[i - c_len] = b[i];
         i++;
     }
+    v[b_len - c_len] = '\0';  // NULL TERMINATOR
     return v;
 }
 
@@ -48,9 +55,21 @@ char *start(char **env)
     char *cwd;
     int fich = open("/etc/hostname", O_RDONLY);
     char *buff = (char *)malloc(sizeof(char) * 100);
+    ssize_t bytes_read;
 
+    if (buff == NULL)  // NULL CHECK
+        return NULL;
     cwd = getcwd(NULL, 0);
-    read(fich, buff, 100);
+    if (fich != -1) {  // FILE DESCRIPTOR VALIDATION
+        bytes_read = read(fich, buff, 99);  // LEAVE ROOM FOR NULL
+        if (bytes_read > 0)
+            buff[bytes_read] = '\0';  // NULL TERMINATE
+        else
+            buff[0] = '\0';  // EMPTY STRING ON ERROR
+        close(fich);  // CLEANUP
+    } else {
+        buff[0] = '\0';  // EMPTY STRING IF FILE DOESN'T EXIST
+    }
     start_bis(buff, c, env);
     if (my_strcmp(cwd, "/home") == 84 && my_strcmp(cwd, "/") == 84 &&
     verifpath(cwd, "/home") == 0) {
